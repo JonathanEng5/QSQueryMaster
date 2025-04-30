@@ -26,7 +26,6 @@ def upload_file():
         return jsonify({'error': str(e)}), 500
 
 def basic_analysis(df):
-    # Dummy analysis logic for MVP: return column names and basic checks
     issues = []
     if df.empty:
         issues.append("The spreadsheet appears to be empty.")
@@ -43,8 +42,5 @@ def basic_analysis(df):
     return issues
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    if __name__ == '__main__':
-    import os
-    port = int(os.environ.get('PORT', 10000))  # Render expects this
+    port = int(os.environ.get('PORT', 10000))
     app.run(host='0.0.0.0', port=port, debug=True)
