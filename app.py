@@ -6,6 +6,10 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
+@app.route('/')
+def home():
+    return "🎉 QSQueryMaster backend is live. Use the /upload endpoint to POST a spreadsheet."
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
